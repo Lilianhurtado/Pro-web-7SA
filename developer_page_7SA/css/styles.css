@@ -13,7 +13,32 @@
 html{
     /*conversion para web */
     font-size: 62.5%;
+    font-family: krub, Helvetica, sans-serif;
+    /*Hack para modelo de caja*/
+    box-sizing: border-box;
 }
+
+*,*b::before,* ::after{
+    /*Hack para modelo de caja */
+    box-sizing: inherit;
+}
+
+/* Tipografia*/
+h1{
+font-size: 3.8rem;
+}
+
+h2{
+    font-size:1.8rem;
+}
+
+h3{
+    font-size:1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+
 body{
     /*16 px es el estandar para navegadores */
     font-size: 16px;
@@ -86,6 +111,61 @@ body{
     /*../*/
     background-image: url("/img/hero.jpg");
     background-repeat: no repeat;
-     /cover cubre la imagen con todo el tamaño posible
+     /*cover cubre la imagen con todo el tamaño posible*/
     background-size: cover;
+    height: 450px; /*Altura del elemento hero*/
+    position: relative; /* para manipular la posicion
+    el padre siempre debe ser relative*/
+
+}
+
+.contenido-hero{
+    /* para manipular la posicion
+    el hijo siempre debe ser relative*/
+    position: absolute;
+    background-color: rgba(0,0,0,.7); /*Al 70%*/
+    width: 100%;
+    height: 100%;
+    /*Alinear vertical y horizontalmente*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding:1rem 3rem;
+    /*borde redondeado*/
+    border-radius: .5rem;
+    margin-top: 1rem;
+    font-size:2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    /*Ancho del boton al 90% para diseño movil*/
+    width:90%;
+    /*Alinear texto del boton*/
+    text-align: center;
+}
+.contenido-hero p,
+.contenido-hero h2{
+    color: var(--blanco);
+
+    
+}
+
+@media (min-width: 768px){
+    .boton{
+        width: auto;
+    }
 }
